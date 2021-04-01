@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testCompile "junit:junit:4.11"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes('Main-Class': 'Main',
+                'Manifest-Version': '1.0',
+                "Class-Path": configurations.compile.collect { it.isDirectory() ? it : zipTree(it) })
+    }
+}
+
+task fatJar(type:Jar){
+    manifest {
+        attributes(
+                'Main-Class': 'Main',
+                'Implementation-Title': 'Gradle Fat Jar Demo',
+                'Implementation-Version': '1.0'
+        )
+    }
+    from{
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
+}
