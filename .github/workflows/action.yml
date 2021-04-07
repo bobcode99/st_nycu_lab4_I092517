@@ -3,7 +3,7 @@ name: action
 on:
   push:
     branches: [ master ]
-    tags: - 'v*.*.*'
+    tags: - 'release*'
   pull_request:
     branches: [ master ]
 
