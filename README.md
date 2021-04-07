@@ -1,3 +1,7 @@
 # lab4_2025
 
-![example workflow](https://github.com/nian6324/lab4_2025/actions/workflows/action.yml/badge.svg?branch=feature-1)
+<div align="center">
+  <a href="https://github.com/nian6324/lab4_2025/actions">
+		<img src="https://github.com/nian6324/lab4_2025/actions/workflows/action.yml/badge.svg">
+	</a>
+</div>
