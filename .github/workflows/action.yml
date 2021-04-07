@@ -72,7 +72,7 @@ jobs:
           name: jarfile
       - name: Display structure of downloaded files
         run: ls -R
-      - name: Release
+      - name: Release jar file to tag
         uses: softprops/action-gh-release@v1
         with:
           files: ./*.jar
