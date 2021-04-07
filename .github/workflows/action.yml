@@ -75,7 +75,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: echo ${{needs.Assemble.outputs.output1}}
+          files: ${{needs.Assemble.outputs.output1}}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
